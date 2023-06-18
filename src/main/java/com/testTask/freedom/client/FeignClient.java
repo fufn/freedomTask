@@ -1,7 +1,6 @@
-package com.testTask.freedom.controller;
+package com.testTask.freedom.client;
 
 import com.testTask.freedom.model.dto.ExchangeRateResponseDto;
-import com.testTask.freedom.model.enums.CurrencyCode;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -11,6 +10,6 @@ import java.util.List;
 public interface FeignClient {
 
     @GetMapping("/{currency}/{period}")
-    List<ExchangeRateResponseDto> getExchangeRate(@PathVariable(name = "currency") CurrencyCode currency,
+    List<ExchangeRateResponseDto> getExchangeRate(@PathVariable(name = "currency") String currency,
                                                   @PathVariable(name = "period") String period);
 }

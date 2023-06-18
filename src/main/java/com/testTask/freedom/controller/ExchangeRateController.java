@@ -13,15 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/exchange-rate")
+@RequestMapping("/api/v1/exchange-rate")
 @RequiredArgsConstructor
 @Slf4j
 public class ExchangeRateController {
     private final ExchangeRateServiceImpl exchangeRateService;
 
     @GetMapping("/history")
-    public List<ExchangeRateResponseDto> getExchangeRateHistory(@RequestParam List<CurrencyCode> currencyCodes){
-        log.info("GET request to get exchange rate history with currency codes {}", currencyCodes);
+    public List<ExchangeRateResponseDto> getExchangeRateHistory(@RequestParam List<CurrencyCode> currencyCodes) {
         return exchangeRateService.getExchangeRateHistory(currencyCodes);
     }
 }
