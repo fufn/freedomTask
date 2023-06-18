@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/exchange-rate")
 @RequiredArgsConstructor
-@Slf4j
 public class ExchangeRateController {
     private final ExchangeRateService exchangeRateService;
 
