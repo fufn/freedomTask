@@ -7,9 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class ExchangeRateResponseDto {
 
     @JsonProperty(value = "date_at")
