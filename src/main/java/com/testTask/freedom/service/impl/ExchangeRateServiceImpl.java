@@ -15,10 +15,11 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class ExchangeRateServiceImpl {
+public class ExchangeRateServiceImpl implements com.testTask.freedom.service.ExchangeRateService {
 
     private final FeignClient feignClient;
 
+    @Override
     public List<ExchangeRateResponseDto> getExchangeRateHistory(List<CurrencyCode> currencyCodes) {
         log.info("getting exchange rate history from external api");
         List<ExchangeRateResponseDto> responseDto = new ArrayList<>();

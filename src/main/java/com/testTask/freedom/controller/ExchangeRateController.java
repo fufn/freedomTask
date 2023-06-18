@@ -2,7 +2,7 @@ package com.testTask.freedom.controller;
 
 import com.testTask.freedom.model.dto.ExchangeRateResponseDto;
 import com.testTask.freedom.model.enums.CurrencyCode;
-import com.testTask.freedom.service.impl.ExchangeRateServiceImpl;
+import com.testTask.freedom.service.ExchangeRateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class ExchangeRateController {
-    private final ExchangeRateServiceImpl exchangeRateService;
+    private final ExchangeRateService exchangeRateService;
 
     @GetMapping("/history")
     public List<ExchangeRateResponseDto> getExchangeRateHistory(@RequestParam List<CurrencyCode> currencyCodes) {
