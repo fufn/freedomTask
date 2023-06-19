@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://my.namespace.kz/rates">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getRatesRequest>
+            <gs:currencyCode>USD</gs:currencyCode>
+            <gs:currencyCode>EUR</gs:currencyCode>
+        </gs:getRatesRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

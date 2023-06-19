@@ -1,0 +1,43 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://my.namespace.kz/rates" elementFormDefault="qualified">
+
+    <xs:element name="getRatesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="currencyCode" minOccurs="1" maxOccurs="unbounded">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="USD"/>
+                            <xs:enumeration value="RUB"/>
+                            <xs:enumeration value="EUR"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getRatesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="exchangeRateResponseDto" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="dateAt">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="date" type="xs:string"/>
+                                        <xs:element name="timezone" type="xs:string"/>
+                                        <xs:element name="timezoneType" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="value" type="xs:string"/>
+                            <xs:element name="currency" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
