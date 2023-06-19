@@ -6,7 +6,7 @@
 команду:
 
 ```bash
-git clone <https://github.com/fufn/easyBot.git>
+git clone <https://github.com/fufn/freedomTask.git>
 ```
 
 ## 2) Перейдите в каталог проекта:
